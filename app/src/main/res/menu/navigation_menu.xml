@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_make_reservation"
+        android:icon="@mipmap/ic_create_black_24dp"
+        android:title="Make Reservation" />
+
+    <item android:id="@+id/menu_current_reservation"
+        android:icon="@mipmap/ic_schedule_black_24dp"
+        android:title="My Current Reservation" />
+
+    <item android:id="@+id/menu_reservation_history"
+        android:icon="@mipmap/ic_history_black_24dp"
+        android:title="My Reservation History" />
+<!---
+    <item android:id="@+id/menu_transactions"
+        android:icon="@mipmap/ic_receipt_black_24dp"
+        android:title="My Transactions" />
+
+    <item android:id="@+id/menu_profile"
+        android:icon="@mipmap/ic_person_outline_black_24dp"
+        android:title="My Profile" />
+
+    <item android:id="@+id/menu_about"
+        android:icon="@mipmap/ic_help_outline_black_24dp"
+        android:title="About" />
+
+    <item android:id="@+id/menu_sign_out"
+        android:icon="@mipmap/ic_power_settings_new_black_24dp"
+        android:title="Sign Out" />
+
+-->
+
+</menu>

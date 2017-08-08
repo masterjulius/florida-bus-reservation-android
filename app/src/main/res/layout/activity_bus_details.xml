@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.app.florida_bus_reservation.myapplication.busDetails">
+    
+    <TextView
+        android:id="@+id/lblBusClass"
+        android:text="Bus Class:"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="20dp" />
+    
+    <TextView
+        android:id="@+id/txtBusClass"
+        android:text="BUS CLASS"
+        android:layout_width="210dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/lblBusClass"
+        android:layout_alignBottom="@+id/lblBusClass"
+        android:layout_toRightOf="@+id/lblBusClass" />
+
+    <TextView
+        android:id="@+id/lblBusNumber"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/lblBusClass"
+        android:layout_alignStart="@+id/lblBusClass"
+        android:layout_below="@+id/lblBusClass"
+        android:layout_marginTop="23dp"
+        android:text="Bus Number:" />
+
+    <TextView
+        android:id="@+id/txtBusNumber"
+        android:text="BUS NUMBER"
+        android:layout_width="210dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/lblBusNumber"
+        android:layout_alignBottom="@+id/lblBusClass"
+        android:layout_toRightOf="@+id/lblBusNumber" />
+
+
+    <TextView
+        android:id="@+id/lblNumberOfSeats"
+        android:layout_width="110dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/lblBusClass"
+        android:layout_alignStart="@+id/lblBusNumber"
+        android:layout_below="@+id/lblBusNumber"
+        android:layout_marginTop="23dp"
+        android:text="Number of Seats:" />
+
+    <TextView
+        android:id="@+id/txtNumberOfSeats"
+        android:text="65"
+        android:layout_width="210dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/lblNumberOfSeats"
+        android:layout_alignBottom="@+id/lblNumberOfSeats"
+        android:layout_toRightOf="@+id/lblNumberOfSeats" />
+
+
+    <TextView
+        android:id="@+id/lblSeatPrice"
+        android:layout_width="110dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/lblNumberOfSeats"
+        android:layout_alignStart="@+id/lblNumberOfSeats"
+        android:layout_below="@+id/lblNumberOfSeats"
+        android:layout_marginTop="23dp"
+        android:text="Price Per Seat:" />
+
+    <TextView
+        android:id="@+id/txtSeatPrice"
+        android:text="800.00"
+        android:layout_width="210dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/lblSeatPrice"
+        android:layout_alignBottom="@+id/lblSeatPrice"
+        android:layout_toRightOf="@+id/lblSeatPrice" />
+
+
+    <TextView
+        android:id="@+id/lblHasAircon"
+        android:layout_width="110dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/lblSeatPrice"
+        android:layout_alignStart="@+id/lblSeatPrice"
+        android:layout_below="@+id/lblSeatPrice"
+        android:layout_marginTop="23dp"
+        android:text="Airconditioned:" />
+
+    <TextView
+        android:id="@+id/txtHasAircon"
+        android:text="800.00"
+        android:layout_width="210dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/lblHasAircon"
+        android:layout_alignBottom="@+id/lblHasAircon"
+        android:layout_toRightOf="@+id/lblHasAircon" />
+
+
+    <TextView
+        android:id="@+id/lblAvailableSeats"
+        android:layout_width="120dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/lblHasAircon"
+        android:layout_alignStart="@+id/lblHasAircon"
+        android:layout_below="@+id/lblHasAircon"
+        android:layout_marginTop="23dp"
+        android:text="Unoccupied Seats:" />
+
+    <TextView
+        android:id="@+id/txtAvailableSeats"
+        android:text="25 Seats"
+        android:layout_width="210dp"
+        android:layout_marginLeft="0dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/lblAvailableSeats"
+        android:layout_alignBottom="@+id/lblAvailableSeats"
+        android:layout_toRightOf="@+id/lblAvailableSeats" />
+
+
+    <Button
+        android:id="@+id/btnProceedToSeats"
+        android:layout_width="325dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="PROCEED"
+        android:background="@color/colorAccent"
+        android:textColor="@color/cardview_light_background"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/lblAvailableSeats"
+        android:layout_alignStart="@+id/lblAvailableSeats"
+        android:layout_below="@+id/lblAvailableSeats" />
+
+</RelativeLayout>
