@@ -1,6 +1,7 @@
 package com.example.app.florida_bus_reservation.myapplication;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,7 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     /** Initialize variables */
     private DrawerLayout mDrawerLayout;
@@ -69,28 +70,27 @@ public class HomeActivity extends AppCompatActivity {
 
     private void menuLinksAction() {
 
-        NavigationView nv = (NavigationView)findViewById(R.id.florida_nav_view);
-
-        nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case(R.id.menu_make_reservation):
-                        Intent intent = new Intent(getApplicationContext(),reservation_list_schedules.class);
-                        intent.putExtra("user_id", HomeActivity.this.user_id);
-                        intent.putExtra("username", HomeActivity.this.userName);
-                        startActivity(intent);
-                        break;
-                    case(R.id.menu_current_reservation):
-                        Intent intentCurrentReservation = new Intent(getApplicationContext(), currentReservation.class);
-                        intentCurrentReservation.putExtra("", HomeActivity.this.user_id);
-                        startActivity(intentCurrentReservation);
-                        break;
-                }
-                return true;
-            }
-        });
+        NavigationView navigationView = (NavigationView)findViewById(R.id.florida_nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case(R.id.menu_make_reservation):
+                Intent intent = new Intent(getApplicationContext(),reservation_list_schedules.class);
+                intent.putExtra("user_id", HomeActivity.this.user_id);
+                intent.putExtra("username", HomeActivity.this.userName);
+                startActivity(intent);
+                break;
+            case(R.id.menu_current_reservation):
+                Intent intentCurrentReservation = new Intent(getApplicationContext(), currentReservation.class);
+                intentCurrentReservation.putExtra("user_id", HomeActivity.this.user_id);
+                intentCurrentReservation.putExtra("username", HomeActivity.this.userName);
+                startActivity(intentCurrentReservation);
+                break;
+        }
+        return true;
+    }
 }

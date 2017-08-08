@@ -1,11 +1,13 @@
 package com.example.app.florida_bus_reservation.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -50,14 +52,17 @@ public class ReservationsAdapter extends RecyclerView.Adapter<ReservationsAdapte
             super(itemView);
             this.ctx = context;
             this.my_data = my_data;
-
             this.txtTicketNumber = (TextView) itemView.findViewById(R.id.txtCardTicketNumber);
-
+            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-
+            int position = getAdapterPosition();
+            Intent intent = new Intent(this.ctx, currentReservationDetails.class);
+            intent.putExtra("reservation_id", my_data.get(position).get_res_id());
+            intent.putExtra("reservation_code", my_data.get(position).get_res_code());
+            this.ctx.startActivity(intent);
         }
     }
 }

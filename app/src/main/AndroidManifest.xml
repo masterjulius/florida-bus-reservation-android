@@ -25,7 +25,8 @@
         <activity android:name=".busDetails" />
         <activity android:name=".SeatSelection" />
         <activity android:name=".reservationComplete" />
-        <activity android:name=".currentReservation"></activity>
+        <activity android:name=".currentReservation" />
+        <activity android:name=".currentReservationDetails"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,6 +31,7 @@ public class registerActivity extends AppCompatActivity {
         final EditText username = (EditText) findViewById(R.id.txtUsername);
         final EditText password = (EditText) findViewById(R.id.txtPassword);
         final EditText address = (EditText) findViewById(R.id.txtAddress);
+        final EditText birthPlace = (EditText) findViewById(R.id.txtBirthPlace);
         final EditText contact = (EditText) findViewById(R.id.txtContact);
         final Button btnRegister = (Button) findViewById(R.id.btnRegister);
 
@@ -44,6 +46,7 @@ public class registerActivity extends AppCompatActivity {
                 String g_username = username.getText().toString();
                 String g_password = password.getText().toString();
                 String g_address = address.getText().toString();
+                String g_birthPlace = birthPlace.getText().toString();
                 String g_contact = contact.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -55,15 +58,34 @@ public class registerActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
 
                             if (success) {
+
+                                Toast.makeText(getApplicationContext(), "Successfully registered. Login your account now :)", Toast.LENGTH_SHORT).show();
+
                                 Intent intent = new Intent(registerActivity.this, MainActivity.class);
                                 registerActivity.this.startActivity(intent);
 
                             } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(registerActivity.this);
-                                builder.setMessage("Registration Failed!")
-                                        .setNegativeButton("Retry", null)
-                                        .create()
-                                        .show();
+
+                                boolean isDuplicated = jsonResponse.getBoolean("duplicated");
+                                Toast.makeText(getApplicationContext(), Boolean.toString(isDuplicated), Toast.LENGTH_SHORT).show();
+
+                                if ( isDuplicated ) {
+
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(registerActivity.this);
+                                    builder.setMessage("Registration Failed! This Account already exists!")
+                                            .setNegativeButton("Retry", null)
+                                            .create()
+                                            .show();
+
+                                } else {
+
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(registerActivity.this);
+                                    builder.setMessage("Registration Failed!")
+                                            .setNegativeButton("Retry", null)
+                                            .create()
+                                            .show();
+
+                                }
 
                             }
 
@@ -75,7 +97,7 @@ public class registerActivity extends AppCompatActivity {
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(g_firstName, g_middleName, g_lastName, g_username, g_password, g_address, g_contact, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(g_firstName, g_middleName, g_lastName, g_username, g_password, g_address, g_birthPlace, g_contact, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(registerActivity.this);
                 queue.add(registerRequest);
 

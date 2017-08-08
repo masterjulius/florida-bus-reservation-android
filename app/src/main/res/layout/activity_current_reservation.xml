@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.app.florida_bus_reservation.myapplication.ViewReservationHistory"
-    android:id="@+id/drawerLayout_curresnt_reservations" >
+    android:id="@+id/drawerLayout_current_reservations" >
 
     <android.support.design.widget.NavigationView
         android:id="@+id/florida_nav_view"

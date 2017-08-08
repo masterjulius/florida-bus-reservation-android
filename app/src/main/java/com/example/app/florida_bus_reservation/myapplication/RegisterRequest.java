@@ -11,7 +11,7 @@ public class RegisterRequest extends StringRequest {
     private static final String REGISTER_REQUEST_URL = MySQL_Queries.ConnectionString + "register.php";
     private Map<String, String> params;
 
-    public RegisterRequest(String firstName, String middleName, String lastName, String username, String password, String address, String contact, Response.Listener<String> listener) {
+    public RegisterRequest(String firstName, String middleName, String lastName, String username, String password, String address, String birthPlace, String contact, Response.Listener<String> listener) {
 
         super(Method.POST, REGISTER_REQUEST_URL, listener, null);
         params = new HashMap<>();
@@ -21,6 +21,7 @@ public class RegisterRequest extends StringRequest {
         params.put("username", username);
         params.put("password", password);
         params.put("address", address);
+        params.put("birthPlace", birthPlace);
         params.put("contact", contact);
 
     }

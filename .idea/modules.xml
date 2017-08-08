@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FloridaBusResApp.iml" filepath="$PROJECT_DIR$/FloridaBusResApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/florida-bus-reservation-android.iml" filepath="$PROJECT_DIR$/florida-bus-reservation-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/florida-reservation-mobile-app-master.iml" filepath="$PROJECT_DIR$/florida-reservation-mobile-app-master.iml" />
     </modules>
   </component>
